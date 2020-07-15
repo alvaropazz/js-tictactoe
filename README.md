@@ -1,4 +1,4 @@
-# JavaScript Library
+# JavaScript TICTACTOE
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
