@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  height: 100px;
+  width: 100px;
+  margin-top: 200px;
+}
+
+.cell {
+  border: 1px solid black;
+  text-align: center;
+}
