@@ -1,5 +1,38 @@
-let gameBoard = ['','','','','','','','','']
+let gameBoard = ['','','','','','','','',''];
 
+const player1 = "X";
+
+const player2 = "O";
+
+const play = document.querySelector('.game-board');
+
+let turn = 1;
+
+play.addEventListener('click', function(e) {
+      const cell = e.target;
+      
+      let player;
+      if (cell){            
+            if (turn % 2 !== 0) {
+                  player = player1;
+            } else if (turn%2==0){
+                  player = player2;
+            }
+            turn += 1;
+            console.log(player); 
+      }     
+});
+
+// const boardOutput = document.querySelector('.game-board');
+
+// boardOutput.addEventListener('click', function(e){
+//       const cell = e.target
+//       const tokenChange = e.target.innerText = "x"
+//       gameBoard[cell.getAttribute('data-index')] = tokenChange
+//       // console.log(gameBoard)
+//       // wins(gameBoard)
+//       // console.log(cell.getAttribute('data-index'), tokenChange)
+// });
 
 // required funtions
 // 1. get player details
@@ -15,57 +48,31 @@ function player (name, token){
       this.token = token
 }
 
-const player1 = "X"
-const player2 = "O"
+
 
 // console.log(player1.name, player1.token, player2.name, player2.token)
 
 // askNameAndToken()
 
-let movesLeft = () => {
-      const moves = 9
-      function checkMoves(){
-            return moves
-      }
-      function deductMoves(){
-            moves -= 1
-            return moves
-      }
-      return { checkMoves() 
-            ,deductMoves()
-      }
-}
+// let movesLeft = () => {
+//       const moves = 9
+//       function checkMoves(){
+//             return moves
+//       }
+//       function deductMoves(){
+//             moves -= 1
+//             return moves
+//       }
+//       return { checkMoves() 
+//             ,deductMoves()
+//       }
+// }
 
-function playerTurn(){
-      const play = document.querySelector('.game-board');
-      play.addEventListener('click', function(e){
-            const cell = e.target
-            let turn = 1
-            let player;
-            if (turn % 2 !== 0) {
-                  player = player1
-                  turn += 1
-            } else {
-                  player = player2
-                  turn += 1
-            }
-            return player;
-      })
-}
+
       // let odd = turn
       // let even = turn
 
 
-const boardOutput = document.querySelector('.game-board')
-
-boardOutput.addEventListener('click', function(e){
-      const cell = e.target
-      const tokenChange = e.target.innerText = "x"
-      gameBoard[cell.getAttribute('data-index')] = tokenChange
-      // console.log(gameBoard)
-      // wins(gameBoard)
-      // console.log(cell.getAttribute('data-index'), tokenChange)
-})
 
 function wins(board){
       if(board[0] && board[1] && board[2] === 'x'){
