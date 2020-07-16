@@ -10,7 +10,6 @@ let turn = 1;
 
 play.addEventListener('click', function(e) {
       const cell = e.target;
-      
       let player;
       if (cell){            
             if (turn % 2 !== 0) {
@@ -20,7 +19,7 @@ play.addEventListener('click', function(e) {
             }
             turn += 1;
             console.log(player); 
-      }     
+      }
 });
 
 // const boardOutput = document.querySelector('.game-board');
