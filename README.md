@@ -12,8 +12,8 @@ This project features a tic tac toe game.
 ## Features
 
 - Allow players to input their names
-- Check for winner and congratulate them
-- Reset gamemboard
+- Check for the winner and congratulate them
+- Reset gameboard
 
 ## Live Link
 
