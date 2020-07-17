@@ -9,23 +9,29 @@
 <body>
     <main>
         <div class="game-board">
-            <div class="cell" data-index='0'>1</div>
-            <div class="cell" data-index='1'>2</div>
-            <div class="cell" data-index='2'>3</div>
-            <div class="cell" data-index='3'>4</div>
-            <div class="cell" data-index='4'>5</div>
-            <div class="cell" data-index='5'>6</div>
-            <div class="cell" data-index='6'>7</div>
-            <div class="cell" data-index='7'>8</div>
-            <div class="cell" data-index='8'>9</div>
+            <div class="cell" data-index='0'></div>
+            <div class="cell" data-index='1'></div>
+            <div class="cell" data-index='2'></div>
+            <div class="cell" data-index='3'></div>
+            <div class="cell" data-index='4'></div>
+            <div class="cell" data-index='5'></div>
+            <div class="cell" data-index='6'></div>
+            <div class="cell" data-index='7'></div>
+            <div class="cell" data-index='8'></div>
         </div>
         <div class='user-input'>
             <form action="submit">
-                <label for="p1">X</label>
-                <input type="text" placeholder="Player 1 Name" id='p1' required>
-                <label for="p2">O</label>
-                <input type="text" placeholder="Player 2 Name" id='p2' required>
-                <input type="submit">
+                <div class='submit-field'>
+                    <label for="p1">X</label>
+                    <input type="text" placeholder="Player 1 Name" id='p1' required>
+                </div>
+                <br>
+                <div class='submit-field'>
+                    <label for="p2">O</label>
+                    <input type="text" placeholder="Player 2 Name" id='p2' required>
+                </div>
+                <br>
+                <input type="submit" class="submit-btn">
             </form>
         </div>
     </main>
