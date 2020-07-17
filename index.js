@@ -9,13 +9,31 @@
 
 let gameBoard = ['','','','','','','','',''];
 
-const player1 = "X";
+const playerConstructor = (name, token)=>{
+      return {name, token}
+}
 
-const player2 = "O";
+let player1;
+let player2;
 
-let turn = () => {
-      turn = 1
-      turn += 1
+let form = document.querySelector('.user-input')
+form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const p1 = form.querySelector('input[id="p1"]').value;
+      const p2 = form.querySelector('input[id="p2"]').value;
+      player1 = playerConstructor(`${p1}`, "X");
+      player2 = playerConstructor(`${p2}`, "0");
+      console.log(player1, player2)
+})
+
+
+let gameBoardReset = () => {
+      let squares = document.querySelectorAll('.game-board .cell');
+      Array.from(squares).forEach((e, index) => e.innerText = `${index +1}`)
+}
+
+let gameBoardValue = (token, position) => {
+      gameBoard[position] = token;
 }
 
 let playerTurn = (() => {
@@ -25,13 +43,13 @@ let playerTurn = (() => {
             const cell = e.target
             let dataIndex = cell.getAttribute('data-index')
             function mainFunc(playerAny, positionAny){
-                  player = playerAny
+                  cell.innerText = `${playerAny.token}`
                   gameBoardValue(playerAny, positionAny)
-                  cell.innerText = `${playerAny}`
                   turn += 1
                   if (wins(gameBoard, playerAny, turn)){
                         gameBoard = ['','','','','','','','',''];
                         turn = 1;
+                        gameBoardReset();
                         console.log(turn)
                         console.log(gameBoard)
                   }
@@ -52,15 +70,6 @@ let playerTurn = (() => {
 
 playerTurn();
 
-let gameBoardValue = (token, position) => {
-      gameBoard[position] = token;
-}
-
-function player (name, token){
-      this.name = name,
-      this.token = token
-}
-
 function wins(board, who, counter){
       if ((board[0] === board[1] && board[0] === board[2] && board[0] !== '' )||
           (board[0] === board[3] && board[0] === board[6] && board[0] !== '' )||
@@ -70,7 +79,7 @@ function wins(board, who, counter){
           (board[1] === board[4] && board[1] === board[7] && board[1] !== '' )||
           (board[2] === board[5] && board[2] === board[8] && board[2] !== '' )||
           (board[2] === board[4] && board[2] === board[6] && board[2] !== '' )){
-            alert(`${who} wins the Game!!!`);
+            alert(`${who.name} wins the Game!!!`);
             return true
       } 
       else if (counter > 9) {
