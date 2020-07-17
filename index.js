@@ -21,11 +21,29 @@ form.addEventListener('submit', function (e) {
       e.preventDefault();
       const p1 = form.querySelector('input[id="p1"]').value;
       const p2 = form.querySelector('input[id="p2"]').value;
-      player1 = playerConstructor(`${p1}`, "X");
-      player2 = playerConstructor(`${p2}`, "0");
+
+      if (p1 && p2){
+            player1 = playerConstructor(`${p1}`, "X");
+            player2 = playerConstructor(`${p2}`, "0");
+            showBoard() 
+      }
       console.log(player1, player2)
 })
 
+function showBoard() {
+      const board = document.querySelector('.game-board');
+      const names = document.querySelector('.user-input');
+      if (board.style.display === 'grid') {
+        board.style.display = 'none';
+      } else {
+        board.style.display = 'grid';
+      }
+      if (names.style.display === 'none') {
+        names.style.display = 'block';
+      } else {
+        names.style.display = 'none';
+      }
+    }
 
 let gameBoardReset = () => {
       let squares = document.querySelectorAll('.game-board .cell');
@@ -80,10 +98,12 @@ function wins(board, who, counter){
           (board[2] === board[5] && board[2] === board[8] && board[2] !== '' )||
           (board[2] === board[4] && board[2] === board[6] && board[2] !== '' )){
             alert(`${who.name} wins the Game!!!`);
+            showBoard();
             return true
       } 
       else if (counter > 9) {
-            alert(" Its a tie :-( ")
+            alert(" Its a tie :-( ");
+            showBoard();
             return true
       } 
 };
