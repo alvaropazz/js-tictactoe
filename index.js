@@ -1,3 +1,12 @@
+// required funtions
+// 1. get player details
+// 2. player turn
+// 3. Check wins/ties
+// 4. update game board
+// 5. Game over
+// 6. GAME FLOW
+// 7. RESET GAME
+
 let gameBoard = ['','','','','','','','',''];
 
 const player1 = "X";
@@ -20,12 +29,11 @@ let playerTurn = (() => {
                   gameBoardValue(playerAny, positionAny)
                   cell.innerText = `${playerAny}`
                   turn += 1
-                  wins(gameBoard, playerAny, turn)
-                  if (turn > 9){
-                        turn = 1;
+                  if (wins(gameBoard, playerAny, turn)){
                         gameBoard = ['','','','','','','','',''];
-                        console.log(gameBoard);
+                        turn = 1;
                         console.log(turn)
+                        console.log(gameBoard)
                   }
             }
             if (cell) {
@@ -40,12 +48,6 @@ let playerTurn = (() => {
                   }
             }
       });
-      return  function resetTurn() {
-            console.log(turn)
-            turn = 1
-            console.log(turn)
-      };
-
 });
 
 playerTurn();
@@ -54,59 +56,26 @@ let gameBoardValue = (token, position) => {
       gameBoard[position] = token;
 }
 
-// required funtions
-// 1. get player details
-// 2. player turn
-// 3. Check wins/ties
-// 4. update game board
-// 5. Game over
-// 6. GAME FLOW
-// 7. RESET GAME
-
 function player (name, token){
       this.name = name,
       this.token = token
 }
 
 function wins(board, who, counter){
-      if(board[0] === board[1] && board[0] === board[2] && board[0] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (board[0] === board[3] && board[0] === board[6] && board[0] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (board[0] === board[4] && board[0] === board[8] && board[0] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (board[3] === board[4] && board[3] === board[5] && board[3] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (board[6] === board[7] && board[6] === board[8] && board[6] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (board[1] === board[4] && board[1] === board[7] && board[1] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (board[2] === board[5] && board[2] === board[8] && board[2] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (board[2] === board[4] && board[2] === board[6] && board[2] !== '' ){
-            alert(`${who} wins the Game!!!`)
-            counter=10;
-      } else if (counter > 9) {
+      if ((board[0] === board[1] && board[0] === board[2] && board[0] !== '' )||
+          (board[0] === board[3] && board[0] === board[6] && board[0] !== '' )||
+          (board[0] === board[4] && board[0] === board[8] && board[0] !== '' )||
+          (board[3] === board[4] && board[3] === board[5] && board[3] !== '' )||
+          (board[6] === board[7] && board[6] === board[8] && board[6] !== '' )||
+          (board[1] === board[4] && board[1] === board[7] && board[1] !== '' )||
+          (board[2] === board[5] && board[2] === board[8] && board[2] !== '' )||
+          (board[2] === board[4] && board[2] === board[6] && board[2] !== '' )){
+            alert(`${who} wins the Game!!!`);
+            return true
+      } 
+      else if (counter > 9) {
             alert(" Its a tie :-( ")
-      }else {
-            return false
-      }
+            return true
+      } 
 };
-wins();
-
-// function reset(over) {
-//       if(over>=9) {
-//             gameBoard = ['','','','','','','','',''];
-//             console.log(playerTurn(resetTurn()))
-//       }
-// };
-
-console.log(wins())
 
