@@ -8,10 +8,10 @@ let turn = () => {
       turn = 1
       turn += 1
 }
+
 let playerTurn = (() => {
       const play = document.querySelector('.game-board');
       let turn = 1;
-      let player;
       play.addEventListener('click', function (e) {
             const cell = e.target
             let dataIndex = cell.getAttribute('data-index')
@@ -21,6 +21,12 @@ let playerTurn = (() => {
                   cell.innerText = `${playerAny}`
                   turn += 1
                   wins(gameBoard, playerAny, turn)
+                  if (turn > 9){
+                        turn = 1;
+                        gameBoard = ['','','','','','','','',''];
+                        console.log(gameBoard);
+                        console.log(turn)
+                  }
             }
             if (cell) {
                   if (gameBoard[dataIndex] === ''){
@@ -34,7 +40,12 @@ let playerTurn = (() => {
                   }
             }
       });
-      
+      return  function resetTurn() {
+            console.log(turn)
+            turn = 1
+            console.log(turn)
+      };
+
 });
 
 playerTurn();
@@ -59,22 +70,43 @@ function player (name, token){
 
 function wins(board, who, counter){
       if(board[0] === board[1] && board[0] === board[2] && board[0] !== '' ){
-            console.log(`${who} wins the Game!!!`) 
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (board[0] === board[3] && board[0] === board[6] && board[0] !== '' ){
-            console.log(`${who} wins the Game!!!`)
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (board[0] === board[4] && board[0] === board[8] && board[0] !== '' ){
-            console.log(`${who} wins the Game!!!`)
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (board[3] === board[4] && board[3] === board[5] && board[3] !== '' ){
-            console.log(`${who} wins the Game!!!`)
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (board[6] === board[7] && board[6] === board[8] && board[6] !== '' ){
-            console.log(`${who} wins the Game!!!`)
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (board[1] === board[4] && board[1] === board[7] && board[1] !== '' ){
-            console.log(`${who} wins the Game!!!`)
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (board[2] === board[5] && board[2] === board[8] && board[2] !== '' ){
-            console.log(`${who} wins the Game!!!`)
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (board[2] === board[4] && board[2] === board[6] && board[2] !== '' ){
-            console.log(`${who} wins the Game!!!`)
+            alert(`${who} wins the Game!!!`)
+            counter=10;
       } else if (counter > 9) {
-            console.log(" Its a tie :-( ")
+            alert(" Its a tie :-( ")
+      }else {
+            return false
       }
-}
+};
+wins();
+
+// function reset(over) {
+//       if(over>=9) {
+//             gameBoard = ['','','','','','','','',''];
+//             console.log(playerTurn(resetTurn()))
+//       }
+// };
+
+console.log(wins())
+
