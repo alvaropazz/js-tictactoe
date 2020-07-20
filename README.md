@@ -11,7 +11,13 @@
 
 ## Features
 
+<<<<<<< HEAD
 
+=======
+- Allow players to input their names
+- Check for winner and congratulate them
+- Reset gamemboard
+>>>>>>> parent of 6c16084... update readme.md
 
 ## Live Link
 

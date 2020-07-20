@@ -7,7 +7,7 @@
 // eslint-disable-next-line import/no-self-import
 const {
   showBoard, gameBoardReset, gameBoardValue, gameBoard, player1, player2,
-} = require('./index');
+} = require('./index.js');
 
 // eslint-disable-next-line
 function wins(board, who, counter) {
