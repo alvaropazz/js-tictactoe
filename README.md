@@ -7,17 +7,14 @@
 
 ## About the project
 
-This project features a tic tac toe game. 
+
 
 ## Features
 
-- Allow players to input their names
-- Check for winner and congratulate them
-- Reset gamemboard
+
 
 ## Live Link
 
-Check the live project [here](https://rawcdn.githack.com/alvaropazz/js-tictactoe/feature/project/index.html)
 
 ## Technologies Used
 
