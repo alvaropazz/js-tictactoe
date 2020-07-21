@@ -1,5 +1,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-alert */
+import showBoard from './showboard';
+import gameBoardReset from './gameboardreset';
 
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 
@@ -8,22 +10,8 @@ const playerConstructor = (name, token) => ({ name, token });
 let player1;
 let player2;
 
-function showBoard() {
-  const board = document.querySelector('.game-board');
-  const names = document.querySelector('.user-input');
-  if (board.style.display === 'grid') {
-    board.style.display = 'none';
-  } else {
-    board.style.display = 'grid';
-  }
-  if (names.style.display === 'none') {
-    names.style.display = 'block';
-  } else {
-    names.style.display = 'none';
-  }
-}
-
 const form = document.querySelector('.user-input');
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const p1 = form.querySelector('input[id="p1"]').value;
@@ -35,11 +23,6 @@ form.addEventListener('submit', (e) => {
     showBoard();
   }
 });
-
-const gameBoardReset = () => {
-  const squares = document.querySelectorAll('.game-board .cell');
-  Array.from(squares).forEach((e) => (e.innerText = ''));
-};
 
 const gameBoardValue = (token, position) => {
   gameBoard[position] = token;
