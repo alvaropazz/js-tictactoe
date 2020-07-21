@@ -22,6 +22,8 @@
 ## Live Link
 
 
+![Live Demo](https://user-images.githubusercontent.com/40712459/87885274-a67f4b80-ca0c-11ea-9271-aca4fa881dcc.gif)
+
 ## Technologies Used
 
 This project utilizes:
