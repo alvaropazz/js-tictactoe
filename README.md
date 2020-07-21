@@ -7,7 +7,7 @@
 
 ## About the project
 
-
+This is a web based game that allows two users to compete in a simple game of tic-tac-toe and a winner is declared when necessary or a tie of necessary too.
 
 ## Features
 
@@ -27,14 +27,6 @@ This project utilizes:
 - JavaScript
 - CSS
 - HTML
-
-<!-- 
-
-## Testing
-
-## Test Output
-
--->
 
 ## Contributors
 
