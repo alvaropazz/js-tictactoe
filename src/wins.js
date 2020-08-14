@@ -1,4 +1,4 @@
-import showBoard from './showboard'
+import showBoard from './showboard';
 
 // eslint-disable-next-line
 function wins(board, who, counter) {
@@ -12,15 +12,17 @@ function wins(board, who, counter) {
             || (board[2] === board[5] && board[2] === board[8] && board[2] !== '')
             || (board[2] === board[4] && board[2] === board[6] && board[2] !== '')
   ) {
+    // eslint-disable-next-line
     alert(`${who.name} ( ${who.token} ) wins the Game!!!`);
     showBoard();
     return true;
   }
   if (counter > 9) {
+    // eslint-disable-next-line
     alert(' Its a tie :-( ');
     showBoard();
     return true;
   }
 }
 
-export default wins
+export default wins;

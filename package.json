@@ -18,6 +18,9 @@
   "homepage": "https://github.com/alvaropazz/js-tictactoe#readme",
   "devDependencies": {
     "css-loader": "^4.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
