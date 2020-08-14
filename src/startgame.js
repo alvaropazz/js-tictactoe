@@ -37,8 +37,14 @@ const startGame = () => {
       gameBoardValue(playerAny, positionAny);
       turn += 1;
       if (wins(gameBoard, playerAny, turn)) {
+
+        console.log(wins(gameBoard, playerAny, turn))
+        
         gameBoard = ['', '', '', '', '', '', '', '', ''];
         turn = 1;
+        
+        console.log(wins(gameBoard, playerAny, turn))
+
         gameBoardReset();
       }
     }

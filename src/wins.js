@@ -14,15 +14,15 @@ function wins(board, who, counter) {
   ) {
     // eslint-disable-next-line
     alert(`${who.name} ( ${who.token} ) wins the Game!!!`);
-    showBoard();
     return true;
   }
   if (counter > 9) {
     // eslint-disable-next-line
-    alert(' Its a tie :-( ');
-    showBoard();
+    alert('It\'s a tie :-(');
     return true;
   }
+  showBoard();
+  return false
 }
 
 export default wins;
