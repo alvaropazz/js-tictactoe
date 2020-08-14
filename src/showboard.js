@@ -13,4 +13,4 @@ function showBoard() {
   }
 }
 
-export default showBoard;
+export default showBoard
