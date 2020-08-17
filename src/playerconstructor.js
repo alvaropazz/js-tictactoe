@@ -1,3 +1,3 @@
 const playerConstructor = (name, token) => ({ name, token });
 
-export default playerConstructor
+export default playerConstructor;

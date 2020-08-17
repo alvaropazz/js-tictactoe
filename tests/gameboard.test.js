@@ -1,7 +1,7 @@
 import gameBoardReset from '../src/gameboard';
 
 
-test('it deletes the content of the grid', ()=>{
+test('it deletes the content of the grid', () => {
   document.body.innerHTML = `
     <div class="game-board">
             <div class="cell" data-index='0'></div>

@@ -2,12 +2,9 @@ import gameBoardReset from './gameboard';
 import wins from './wins';
 import showBoard from './showboard';
 import playerConstructor from './playerconstructor';
+import gameBoardValue from './gameboardvalue';
 
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
-
-const gameBoardValue = (token, position) => {
-  gameBoard[position] = token;
-};
 
 let player1;
 let player2;
@@ -33,7 +30,7 @@ const startGame = () => {
     const dataIndex = cell.getAttribute('data-index');
     function mainFunc(playerAny, positionAny) {
       cell.innerText = `${playerAny.token}`;
-      gameBoardValue(playerAny, positionAny);
+      gameBoardValue(playerAny, positionAny, gameBoard);
       turn += 1;
       if (wins(gameBoard, playerAny, turn)) {
         gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -56,4 +53,4 @@ const startGame = () => {
   });
 };
 
-export {startGame, playerConstructor};
+export { startGame, playerConstructor };

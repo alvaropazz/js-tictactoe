@@ -1,6 +1,6 @@
 import showBoard from '../src/showboard';
 
-test('toggles class name', () => {
+test('should hide/show board and player name form', () => {
   document.body.innerHTML = `
     <div class="game-board">
             <div class="cell" data-index='0'></div>
@@ -39,7 +39,7 @@ test('toggles class name', () => {
   names.style.display = 'block';
 
   button.addEventListener('click', (e) => {
-    e.preventDefault;
+    e.preventDefault();
     showBoard();
   });
 
