@@ -1,6 +1,7 @@
 import gameBoardReset from './gameboard';
 import wins from './wins';
 import showBoard from './showboard';
+import playerConstructor from './playerconstructor';
 
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 
@@ -10,8 +11,6 @@ const gameBoardValue = (token, position) => {
 
 let player1;
 let player2;
-
-const playerConstructor = (name, token) => ({ name, token });
 
 const form = document.querySelector('.user-input');
 form.addEventListener('submit', (e) => {
@@ -37,14 +36,8 @@ const startGame = () => {
       gameBoardValue(playerAny, positionAny);
       turn += 1;
       if (wins(gameBoard, playerAny, turn)) {
-
-        console.log(wins(gameBoard, playerAny, turn))
-        
         gameBoard = ['', '', '', '', '', '', '', '', ''];
         turn = 1;
-        
-        console.log(wins(gameBoard, playerAny, turn))
-
         gameBoardReset();
       }
     }
@@ -63,4 +56,4 @@ const startGame = () => {
   });
 };
 
-export default startGame;
+export {startGame, playerConstructor};

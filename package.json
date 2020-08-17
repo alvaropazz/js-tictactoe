@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch *.js"
+    "watch": "jest -c jest.config.js --watch *.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/alvaropazz/js-tictactoe#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.11.0",
+    "@testing-library/jest-dom": "^5.11.3",
     "css-loader": "^4.2.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",

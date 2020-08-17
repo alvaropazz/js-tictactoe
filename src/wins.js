@@ -23,7 +23,7 @@ function wins(board, who, counter) {
     showBoard();
     return true;
   }
-  return false
+  return false;
 }
 
 export default wins;

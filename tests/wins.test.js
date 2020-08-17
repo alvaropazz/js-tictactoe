@@ -1,12 +1,12 @@
-import wins from '../src/wins'
+import wins from '../src/wins';
 
-let gameBoardLose = ['', '', '', '', '', '', '', '', ''];
+const gameBoardLose = ['', '', '', '', '', '', '', '', ''];
 
-let playerAny = {
+const playerAny = {
   token: 'x',
-  name: 'Jay'
-}
+  name: 'Jay',
+};
 
-test('it returns false when no winner or loser is declared', ()=>{
-  expect(wins(gameBoardLose, playerAny, 2)).toBe(false)
-})
+test('it returns false when no winner or loser is declared', () => {
+  expect(wins(gameBoardLose, playerAny, 2)).toBe(false);
+});

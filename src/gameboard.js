@@ -1,6 +1,11 @@
 const gameBoardReset = () => {
   const squares = document.querySelectorAll('.game-board .cell');
-  Array.from(squares).forEach((e) => (e.innerText === ''));
+  let content = [];
+  Array.from(squares).forEach((e) => {
+    e.innerText = ' ';
+    content.push(e.innerText)
+  })
+  return content
 };
 
 
