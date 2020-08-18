@@ -1,0 +1,32 @@
+{
+  "name": "js-tictactoe",
+  "version": "1.0.0",
+  "description": "[![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url]",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest -c jest.config.js --watch *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvaropazz/js-tictactoe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvaropazz/js-tictactoe/issues"
+  },
+  "homepage": "https://github.com/alvaropazz/js-tictactoe#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.0",
+    "@testing-library/jest-dom": "^5.11.3",
+    "css-loader": "^4.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.4.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}

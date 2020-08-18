@@ -1,0 +1,49 @@
+main {
+  margin: 0 auto;
+  height: 500px;
+  width: 500px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
+
+.game-board {
+  margin: 20%;
+  grid-template-columns: repeat(3, auto);
+  height: 100px;
+  width: 100px;
+  display: none;
+  font-size: 30px;
+}
+
+.cell {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  margin: 20%;
+  text-align: center;
+  border: 1px solid gray;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+}
+
+.submit-field {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  padding: 10px;
+}
